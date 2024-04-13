@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "all": MessageLookupByLibrary.simpleMessage("الكل"),
         "back": MessageLookupByLibrary.simpleMessage("رجوع"),
+        "camera":
+            MessageLookupByLibrary.simpleMessage("التقاط صورة الملف الشخصي"),
         "change_password":
             MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
         "classes": MessageLookupByLibrary.simpleMessage("الفصول"),
@@ -41,6 +43,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forget_password":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور ؟"),
         "full_name": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
+        "gallery":
+            MessageLookupByLibrary.simpleMessage("اختيار صورة الملف الشخصي"),
         "get_started": MessageLookupByLibrary.simpleMessage("ابدأ الآن"),
         "landing_text1": MessageLookupByLibrary.simpleMessage("تطبيق مدرستك"),
         "landing_text2":
@@ -66,6 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "security_information":
             MessageLookupByLibrary.simpleMessage("معلومات سرية"),
+        "select_image_source":
+            MessageLookupByLibrary.simpleMessage("اختر مصدر الصورة"),
         "send_code": MessageLookupByLibrary.simpleMessage("ارسال الكود"),
         "setting": MessageLookupByLibrary.simpleMessage("الاعدادات"),
         "students": MessageLookupByLibrary.simpleMessage("الطلاب"),

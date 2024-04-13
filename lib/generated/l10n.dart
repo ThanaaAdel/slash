@@ -519,6 +519,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Select Image Source`
+  String get select_image_source {
+    return Intl.message(
+      'Select Image Source',
+      name: 'select_image_source',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Take a Profile Picture`
+  String get camera {
+    return Intl.message(
+      'Take a Profile Picture',
+      name: 'camera',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose a Profile Picture`
+  String get gallery {
+    return Intl.message(
+      'Choose a Profile Picture',
+      name: 'gallery',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

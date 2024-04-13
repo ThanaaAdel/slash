@@ -1,9 +1,9 @@
 
 
-import '../../../../../../../core/networking/api_error_handler.dart';
-import '../../../../../../../core/networking/api_result.dart';
-import '../../../../../../../core/networking/api_service.dart';
-import '../model/profile_model.dart';
+import '../../../../../../../../core/networking/api_error_handler.dart';
+import '../../../../../../../../core/networking/api_result.dart';
+import '../../../../../../../../core/networking/api_service.dart';
+import '../../model/profile_model/profile_model.dart';
 
 class ProfileDataRepo {
   final ApiService _apiService;

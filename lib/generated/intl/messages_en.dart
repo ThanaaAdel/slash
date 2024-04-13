@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "all": MessageLookupByLibrary.simpleMessage("All"),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
+        "camera":
+            MessageLookupByLibrary.simpleMessage("Take a Profile Picture"),
         "change_password":
             MessageLookupByLibrary.simpleMessage("Change Password"),
         "classes": MessageLookupByLibrary.simpleMessage("Classes"),
@@ -42,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forget_password":
             MessageLookupByLibrary.simpleMessage("Forget Password ?"),
         "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
+        "gallery":
+            MessageLookupByLibrary.simpleMessage("Choose a Profile Picture"),
         "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
         "landing_text1":
             MessageLookupByLibrary.simpleMessage("Your School  App"),
@@ -71,6 +75,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "security_information":
             MessageLookupByLibrary.simpleMessage("Security Information"),
+        "select_image_source":
+            MessageLookupByLibrary.simpleMessage("Select Image Source"),
         "send_code": MessageLookupByLibrary.simpleMessage("Send Code"),
         "setting": MessageLookupByLibrary.simpleMessage("Settings"),
         "students": MessageLookupByLibrary.simpleMessage("Students"),

@@ -46,7 +46,8 @@
   "First": "أول",
   "Middle": "وسط",
   "Last": "آخر",
-  "security_information": "معلومات سرية"
-
-
+  "security_information": "معلومات سرية",
+  "select_image_source": "اختر مصدر الصورة",
+  "camera": "التقاط صورة الملف الشخصي",
+  "gallery": "اختيار صورة الملف الشخصي"
 }

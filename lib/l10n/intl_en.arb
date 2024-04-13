@@ -45,5 +45,8 @@
  "first": "First",
  "middle": "Middle",
  "last": "Last",
- "security_information": "Security Information"
+ "security_information": "Security Information",
+ "select_image_source": "Select Image Source",
+ "camera": "Take a Profile Picture",
+ "gallery":"Choose a Profile Picture"
 }
