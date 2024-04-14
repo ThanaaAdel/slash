@@ -52,32 +52,26 @@ class _ProfileManagerPageState extends State<ProfileManagerPage> {
         backgroundColor: ColorsManager.mainBlack,
         foregroundColor: ColorsManager.grey,
         actions: [
-          BlocListener<UpdatedUserProfileCubit,UpdatedUserProfileStates>(
-            listener: (context, state) {
-              success: (data) {
+          TextButton(
+            onPressed: () {
+              // Print the values for debugging
+              print('First Name: ${_firstNameController.text}');
+              print('Last Name: ${_lastNameController.text}');
 
-            };},
-            child: TextButton(
-              onPressed: () {
-                // Print the values for debugging
-                print('First Name: ${_firstNameController.text}');
-                print('Last Name: ${_lastNameController.text}');
-
-                // Call the UpdatedUserProfileCubit to update user profile
-                context
-                    .read<UpdatedUserProfileCubit>()
-                    .emitUpdatedUserProfileData(
-                      firstName: _firstNameController.text,
-                      lastName: _lastNameController.text,
-                      userProfileImage: _imageLink,
-                      token:
-                          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzEyMDY5MzExfQ.f1AuYs7R-jonBMz1zIedOe1gQ0tpsemu9WkhHmXz4Yg",
-                    );
-              },
-              child: Text(
-                S.of(context).save,
-                style: TextStyles.font24Gray400,
-              ),
+              // Call the UpdatedUserProfileCubit to update user profile
+              context
+                  .read<UpdatedUserProfileCubit>()
+                  .emitUpdatedUserProfileData(
+                firstName: _firstNameController.text,
+                lastName: _lastNameController.text,
+                userProfileImage: _imageLink,
+                token:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzEyMDY5MzExfQ.f1AuYs7R-jonBMz1zIedOe1gQ0tpsemu9WkhHmXz4Yg",
+              );
+            },
+            child: Text(
+              S.of(context).save,
+              style: TextStyles.font24Gray400,
             ),
           ),
         ],
@@ -98,6 +92,8 @@ class _ProfileManagerPageState extends State<ProfileManagerPage> {
             },
             success: (data) {
               final ProfileModel profileModel = data;
+              _firstNameController.text = profileModel.data!.firstName.toString();
+              _lastNameController.text = profileModel.data!.lastName.toString();
               return Column(
                 children: [
                   ImageAndNameProfile(
@@ -118,6 +114,8 @@ class _ProfileManagerPageState extends State<ProfileManagerPage> {
 
     onSaveChanges: (updatedFirstName, updatedLastName) {
               // Update the state of the parent widget with the new values
+      _firstNameController.text = updatedFirstName;
+      _lastNameController.text = updatedLastName;
               setState(() {
               profileModel.data!.firstName = updatedFirstName;
               profileModel.data!.lastName = updatedLastName;
