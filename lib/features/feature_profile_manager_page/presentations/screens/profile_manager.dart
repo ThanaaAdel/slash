@@ -1,7 +1,5 @@
 import 'package:ablexa/features/feature_profile_manager_page/logic/cubit/profile_cubit/profile_cubit.dart';
 import 'package:ablexa/features/feature_profile_manager_page/logic/cubit/profile_cubit/profile_states.dart';
-import 'package:ablexa/features/feature_profile_manager_page/logic/cubit/updated_user_profile_cubit/updated_user_profile_cubit.dart';
-import 'package:ablexa/features/feature_profile_manager_page/logic/cubit/updated_user_profile_cubit/updated_user_profile_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/theming/colors.dart';
@@ -9,6 +7,7 @@ import '../../../../core/theming/spacing.dart';
 import '../../../../core/theming/styles.dart';
 import '../../../../generated/l10n.dart';
 import '../../data/model/profile_model/profile_model.dart';
+import '../../logic/cubit/updated_user_profile_cubit/updated_user_profile_cubit.dart';
 import '../widgets/email_widget.dart';
 import '../widgets/image_and_name_profile.dart';
 import '../widgets/name_widget.dart';
@@ -29,6 +28,7 @@ class _ProfileManagerPageState extends State<ProfileManagerPage> {
   late TextEditingController _firstNameController;
   late TextEditingController _lastNameController;
   late String _imageLink = ""; // Initialize with empty string
+  bool isSaveClicked = false; // Track save button click state
   @override
   @override
   void initState() {
@@ -54,6 +54,9 @@ class _ProfileManagerPageState extends State<ProfileManagerPage> {
         actions: [
           TextButton(
             onPressed: () {
+              setState(() {
+                isSaveClicked = true;
+              });
               // Print the values for debugging
               print('First Name: ${_firstNameController.text}');
               print('Last Name: ${_lastNameController.text}');
@@ -71,9 +74,13 @@ class _ProfileManagerPageState extends State<ProfileManagerPage> {
             },
             child: Text(
               S.of(context).save,
-              style: TextStyles.font24Gray400,
+              style: TextStyle(
+                fontSize: 24,
+                color: isSaveClicked ? ColorsManager.mainColor : Colors.grey[400], // Change color based on click state
+              ),
             ),
           ),
+
         ],
       ),
       body:
